@@ -1,9 +1,9 @@
 <?php
 
 class Json 
-{
+{ 
 
-    public $result;
+    public $results;
     public $dataType;  
 
     function __construct($dataType)

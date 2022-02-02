@@ -34,28 +34,31 @@
 
 $connection = new mysqli("localhost", "root", "mysql", "news");	
 
-// SQL Injectable 
+
 //SQL Injection: website.com?x= ''OR'1'='1'
 //if when input 1 = id=1 is equal true -display content
 //if when input 2 = id=2 is equal to tru -display content
 //if when input 3 = id=3 is equal to false -display content
 
-// if(isset($_GET['x']))
-//     {
-//     $query = 'SELECT short_description,article FROM news WHERE id='.$_GET['x'] ;                                                                               
-//     $res = $connection->query($query);                                        
-//     if($res && mysqli_num_rows($res)> 0)
-//         {
-//         while($row = $res->fetch_assoc())
-//             {
-//             echo "Short Description: " .$row['short_description']."<br>";
-//             echo "Article: ". $row['article'];
-//             }
-//         }else
-//             {
-//                 echo "No data id=" .$_GET['x']." in the database list";
-//             }
-//     }   
+
+    // SQL Injectable 
+
+if(isset($_GET['x']))
+    {
+    $query = 'SELECT short_description,article FROM news WHERE id='.$_GET['x'] ;                                                                               
+    $res = $connection->query($query);                                        
+    if($res && mysqli_num_rows($res)> 0)
+        {
+        while($row = $res->fetch_assoc())
+            {
+            echo "Short Description: " .$row['short_description']."<br>";
+            echo "Article: ". $row['article'];
+            }
+        }else
+            {
+                echo "No data id=" .$_GET['x']." in the database list";
+            }
+    }   
 
 
 
